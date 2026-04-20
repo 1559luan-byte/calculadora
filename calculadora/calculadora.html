@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>calculadora</title>
+    <meta charset="UTf-8">
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+    <h1 class="titulo">calculadora</h1>
+    <div class="tabela">
+       
+    <table class="fundo" border="1" >
+        <tr>
+        <th colspan="5"><input type="text" id="tela" readonly></th>
+        </tr>
+<tr>
+     <td><button  onclick="adicionar('+')" class="botoes">+</button></td>
+      <td><button onclick="adicionar('-')" class="botoes">-</button></td>
+      <td><button onclick="adicionar('*')" class="botoes">X</button></td>
+      <td><button onclick="adicionar(':')" class="botoes">\</button></td>
+</tr>
+<tr>
+    <td><button onclick="adicionar('1')" class="botoes">1</button></td>
+    <td><button  onclick="adicionar('2')" class="botoes">2</button></td>
+     <td><button  onclick="adicionar('3')" class="botoes">3</button></td>
+     <td rowspan="5"><button  onclick="calcular()" id="igual" class="botoes">=</button></td>
+</tr>
+<tr>
+     <td><button  onclick="adicionar('4')" class="botoes">4</button></td>
+      <td><button  onclick="adicionar('5')" class="botoes">5</button></td>
+       <td><button  onclick="adicionar('6')" class="botoes">6</button></td>
+    
+    </tr>
+    <tr>
+     <td><button  onclick="adicionar('7')" class="botoes">7</button></td>
+      <td><button  onclick="adicionar('8')" class="botoes">8</button></td>
+       <td><button  onclick="adicionar('9')" class="botoes">9</button></td>
+    </tr>
+    <tr>
+    <td><button  onclick="adicionar('0')" class="botoes">0</button></td>
+   <td><button onclick="adicionar('.')" class="botoes">.</button></td>
+      <td><button  onclick="limpar()" class="botoes">C</button></td>
+</tr>
+<tr>
+   
+</tr>
+    </table>
+    </div>
+
+    <script>
+       let valor=""
+       function adicionar(num) {
+        valor+=num
+        document.getElementById("tela").value=valor
+       }
+       function limpar() {
+        valor=""
+        document.getElementById("tela").value=valor
+       }
+       function calcular(num) {
+        try{
+            let resultado= eval(valor)
+            document.getElementById("tela").value= resultado
+valor= resultado
+        }
+        catch{
+            document.getElementById("tela").value="erro"
+            valor=""
+        }
+       }
+    </script>
+</body>
